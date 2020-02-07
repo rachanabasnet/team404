@@ -20,5 +20,11 @@ from itinerary_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('result/', views.result, name='result'),
+    path('profile/', views.form, name = 'form'),
+# <<<<<< HEAD
+#     path('result/', views.result, name='result'),
+# =======
+#     path('profile/', views.form, name='form'),
+
+# >>>>>>> 684cd8b0a641e028910bd158ff019ed727b8ce38
 ]
