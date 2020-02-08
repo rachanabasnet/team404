@@ -1,9 +1,11 @@
 {% load static %}
+{% load pwa %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% progressive_web_app_meta %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <meta charset="utf-8">
@@ -60,6 +62,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact Us</a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -68,94 +71,87 @@
   <!-- #header -->
 
  <!-- form content -->
-<h1>{{user.username}}</h1>
-<div class="container" style="max-width='75%'">
-    <form>
-        Location
-        <select class="form-control form-control-lg">
-            <option>Kathmandu</option>
-            <option>Pokhara</option>
-            <option>Chitwan</option>
-        </select>
+ <section id="fade">
+     <h3 style="float: right; font-family:sans-serif;"> WELCOME, {{user.username}} </h3>
 
-        Duration
-        <select class="form-control form-control-lg">
-            <option>6 days</option>
-            <option>12 days</option>
-            <option>24 days</option>
-        </select>
+     <br><br><br>
 
-        Interest 1
-        <select class="form-control form-control-lg">
-            <option>Adventure</option>
-            <option>Culture</option>
-            <option>Food</option>
-            <option>Nature</option>
-            <option>Leisure</option>
-            <option>Entertainment</option>
-        </select>
+     <h1 style="text-align:center; font-family:sans-serif;"> Fill Your Interest </h1>
 
-        Interest 2
+     <div class="container" style="max-width='75%'">
+         <form>
+             <label>Location</label>
+             <select class="form-control form-control-lg">
+                 <option>Choose...</option>
+                 <option>Kathmandu</option>
+                 <option>Pokhara</option>
+                 <option>Chitwan</option>
+             </select>
 
-        <select class="form-control form-control-lg">
-            <option>Adventure</option>
-            <option>Culture</option>
-            <option>Food</option>
-            <option>Nature</option>
-            <option>Leisure</option>
-            <option>Entertainment</option>
-        </select>
+             <br>
+             <label>Duration</label>
+             <select class="form-control form-control-lg">
+                 <option>Choose...</option>
+                 <option>6 days</option>
+                 <option>12 days</option>
+                 <option>24 days</option>
+             </select>
 
-        Interest 3
+            <br>
+            <label> Your Interests</label>
+            <div class="form-group row">
+                <h5 class="col-sm-2 col-form-label">Interest 1</h5>
+                <div class="col-sm-10">
+                    <select class="form-control form-control-lg">
+                        <option>Choose...</option>
+                        <option>Adventure</option>
+                        <option>Culture</option>
+                        <option>Food</option>
+                        <option>Nature</option>
+                        <option>Leisure</option>
+                        <option>Entertainment</option>
+                    </select>
+                </div>
+              </div>
 
-        <select class="form-control form-control-lg">
-            <option>Adventure</option>
-            <option>Culture</option>
-            <option>Food</option>
-            <option>Nature</option>
-            <option>Leisure</option>
-            <option>Entertainment</option>
-        </select>
-        <br>
+              <div class="form-group row">
+                  <h5 class="col-sm-2 col-form-label">Interest 2</h5>
+                  <div class="col-sm-10">
+                      <select class="form-control form-control-lg">
+                          <option>Choose...</option>
+                          <option>Adventure</option>
+                          <option>Culture</option>
+                          <option>Food</option>
+                          <option>Nature</option>
+                          <option>Leisure</option>
+                          <option>Entertainment</option>
+                      </select>
+                  </div>
+                </div>
 
+                <div class="form-group row">
+                    <h5 class="col-sm-2 col-form-label">Interest 3</h5>
+                    <div class="col-sm-10">
+                        <select class="form-control form-control-lg">
+                            <option>Choose...</option>
+                            <option>Adventure</option>
+                            <option>Culture</option>
+                            <option>Food</option>
+                            <option>Nature</option>
+                            <option>Leisure</option>
+                            <option>Entertainment</option>
+                        </select>
+                    </div>
+                  </div>
+             <br><br>
+         </form>
 
-
-        <br>
-    </form>
-
-    <a href="{% url 'itin' %}"><button type="button" class="btn btn-dark btn-block">Show Results</button></a>
-    <br>
-</div>
-
-
-
-
- <!-- #form content -->
-
-  <!--==========================
-  Footer
-============================-->
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="copyright">
-          &copy; Copyright <strong> uTravel </strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-          -->
-          Designed by <a href="https://bootstrapmade.com/">404</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-  <!-- #footer -->
+         <a href="{% url 'itin' %}"><button type="button" class="btn btn-secondary btn-block" style="margin-bottom:20px;">Show Results</button></a>
+         <br>
+         <br>
+         <br>
+     </div>
+ </section>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 

@@ -1,9 +1,10 @@
 {% load static %}
-
+{% load pwa %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% progressive_web_app_meta %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <meta charset="utf-8">
@@ -48,18 +49,19 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="#hero"><h1>uTravel</h1></a>
+        <a href="{% url 'home' %}"><h1>uTravel</h1></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact Us</a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -80,8 +82,8 @@
 
         <h1>Here is your Itinerary</h1>
 {% for i in '123456'|make_list %}
-        <div class="container col-md-2 service-item" style="background-color:'red';">
-        <div class="card" style="width: 22rem;">
+        <div class="container col-md-2 service-item">
+        <div class="card" style="width: 22rem; " >
           <div class="card-header">
             Day {{i}} - Kathmandu-Bhaktapur
           </div>

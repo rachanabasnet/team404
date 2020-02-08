@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'itinerary_app',
     'users_app',
     'crispy_forms',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'itinerary_app/static/js', 'serviceworker.js')
