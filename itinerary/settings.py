@@ -127,6 +127,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+<<<<<<< HEAD
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -135,3 +136,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'itinerary_app/static/js', 'serviceworker.js')
+=======
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+>>>>>>> 658468f353e001fba691b48c055b979ecd8d4da1
