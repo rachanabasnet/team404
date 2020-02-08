@@ -52,14 +52,14 @@
     <div class="hero-container">
       <div class="wow fadeIn">
         <div class="hero-logo">
-          <img class="" src="{% static 'itinerary_app/img/logo.png' %}" alt="Yatra">
+          <h1 style="font-size= '120px' font-family: sans-serif;">uTravel</h1>
         </div>
 
-        <h1>Welcome to Yatra</h1>
-        <h2>We provide <span class="rotating">your dream tour , fun events</span></h2>
+        <h1>Welcome to uTravel Inc.</h1>
+        <h2>We provide <span class="rotating">Your dream tour , Fun events</span></h2>
         <div class="actions">
-          <a href="{% url 'form' %}" class="btn-get-started">Get Started</a>
-          <a href="#services" class="btn-services">Our Services</a>
+          <a href="{% url 'register' %}" class="btn-get-started">Get Started</a>
+          <a href="{% url 'login' %}" class="btn-services">Login</a>
         </div>
       </div>
     </div>
@@ -72,14 +72,14 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="#hero"><img src="{% static 'itinerary_app/img/logo.png' %}" alt="" title="" /></img></a>
+        <a href="{% url 'home' %}"><h1>uTravel</h1></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
@@ -100,7 +100,7 @@
         <div class="col-md-12">
           <h3 class="section-title">About Us</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+          <p class="section-description">Yatra is focused on delivering a customized tour to give you and your loved ones an unforgettable experience.</p>
         </div>
       </div>
     </div>
@@ -108,21 +108,20 @@
       <div class="row">
 
         <div class="col-lg-6 about-img">
-          <img src="{% static 'itinerary_app/img/backgroud.jpg' %}" alt="">
+          <img src="{% static 'itinerary_app/img/side.jpg' %}" alt="">
         </div>
 
         <div class="col-md-6 about-content">
-          <h2 class="about-title">We provide great services and ideass</h2>
+          <h2 class="about-title">We provide your dream vacation.</h2>
           <p class="about-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate
+            We're sure you've experienced a forgetttable vacation first hand. Uninteresting locales, bland food, bad service, a lack of fun events. Our mission is to solve these inconviniences once and for all. Using our tailor made algorithm, we generate an itinerary
+            thats fitted towards you.
           </p>
           <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-            id est laborum
+            The process is simple. Just create an account, fill out the form and let us do the rest.
           </p>
           <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt molli.
+            We are partnered with the best hotels, restaurants and travel agencies in the nation to give you memories that will last a lifetime.
           </p>
         </div>
       </div>
@@ -138,40 +137,19 @@
         <div class="col-md-12">
           <h3 class="section-title">Our Services</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-desktop"></i></div>
-          <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
-          <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+        <div class="col-md-6 service-item">
+          <div class="service-icon"><i class="fa fa-list-alt"></i></div>
+          <h4 class="service-title"><a href="">Itinerary</a></h4>
+          <p class="service-description">We create custom itineraries.</p>
         </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-          <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
-          <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-          <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-photo"></i></div>
-          <h4 class="service-title"><a href="">Magni Dolores</a></h4>
-          <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-road"></i></div>
-          <h4 class="service-title"><a href="">Nemo Enim</a></h4>
-          <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-          <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
-          <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+        <div class="col-md-6 service-item">
+          <div class="service-icon"><i class="fa fa-calendar"></i></div>
+          <h4 class="service-title"><a href="">Booking</a></h4>
+          <p class="service-description">Book yourself at the best hotels and travel agencies available.</p>
         </div>
       </div>
     </div>
@@ -193,7 +171,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="member">
-            <div class="pic"><img src="{% static 'itinerary_app/img/team-1.jpg' %}" alt=""></div>
+            <div class="pic"><img src="{% static 'itinerary_app/img/team1.jpg' %}" alt=""></div>
             <h4>Aarohan Thapa</h4>
             <span>Team Member</span>
             <div class="social">
@@ -207,7 +185,7 @@
 
         <div class="col-md-3">
           <div class="member">
-            <div class="pic"><img src="{% static 'itinerary_app/img/team-2.jpg' %}" alt=""></div>
+            <div class="pic"><img src="{% static 'itinerary_app/img/team2.jpg' %}" alt=""></div>
             <h4>Amisha Chaudhary</h4>
             <span>Team Member</span>
             <div class="social">
@@ -221,7 +199,7 @@
 
         <div class="col-md-3">
           <div class="member">
-            <div class="pic"><img src="{% static 'itinerary_app/img/team-3.jpg' %}" alt=""></div>
+            <div class="pic"><img src="{% static 'itinerary_app/img/team3.jpg' %}" alt=""></div>
             <h4>Krijan Prajapati</h4>
             <span>Team Member</span>
             <div class="social">
@@ -296,7 +274,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="copyright">
-            &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
+            &copy; Copyright <strong> uTravel </strong>. All Rights Reserved
           </div>
           <div class="credits">
             <!--
@@ -305,7 +283,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">404</a>
           </div>
         </div>
       </div>

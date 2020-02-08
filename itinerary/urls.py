@@ -15,16 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from itinerary_app import views
-
+from users_app import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('profile/', views.form, name = 'form'),
-# <<<<<< HEAD
-#     path('result/', views.result, name='result'),
-# =======
-#     path('profile/', views.form, name='form'),
+    path('register/', user_views.register, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('profile/', user_views.profile, name='profile'),
+    path('itin/', views.itin, name='itin'),
 
-# >>>>>>> 684cd8b0a641e028910bd158ff019ed727b8ce38
+    # <<<<<< HEAD
+    #     path('result/', views.result, name='result'),
+    # =======
+    #     path('profile/', views.form, name='form'),
+
+    # >>>>>>> 684cd8b0a641e028910bd158ff019ed727b8ce38
 ]

@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,18 +44,18 @@
   <!--==========================
   Header Section
   ============================-->
-  <header id="header">
+  <header id="header" style="margin-bottom='10px';">
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="#hero"><h1>uTravel</h1></a>
+        <a href="{% url 'home' %}"><h1>uTravel</h1></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
@@ -67,83 +67,45 @@
   </header>
   <!-- #header -->
 
+ <!-- form content -->
+<div class="content">
+    <form  method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group">
+            <button class="btn btn-outline-info btn-block" type="submit">Sign Up</button>
+        </div>
+    </form>
+
+</div>
+
+
+ <!-- #form content -->
 
   <!--==========================
-  Hero Section
-  ============================-->
-  <section id="hero">
-    <div class="hero-container">
-      <div class="wow fadeIn">
-        <div class="hero-logo">
-          <h1 style="font-size= '200px' font-family: sans-serif;">uTravel</h1>
+  Footer
+============================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="copyright">
+          &copy; Copyright <strong> uTravel </strong>. All Rights Reserved
         </div>
-
-        <h1>Here is your Itinerary</h1>
-{% for i in '123456'|make_list %}
-        <div class="container col-md-2 service-item" style="background-color:'red';">
-        <div class="card" style="width: 22rem;">
-          <div class="card-header">
-            Day {{i}} - Kathmandu-Bhaktapur
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-
-              <div>
-                <span class="glyphicon glyphicon-map-marker"></span>
-                Hotel Check-in
-                <button type="button" class="btn btn-outline-secondary">BOOK</button>
-              </div>
-
-            </li>
-
-            <li class="list-group-item"><div class="">
-                <span class = "glyphicon glyphicon-apple"></span>
-                Breakfast 8:30am
-            </div></li>
-            <li class="list-group-item">
-
-              <div>
-                <span class="glyphicon glyphicon-camera"></span>
-                Kathmandu Durbar Square Visit
-                <button type="button" class="btn btn-outline-secondary" href="">BOOK</button>
-              </div>
-
-            </li>
-
-          </li>
-          <li class="list-group-item"><div class="">
-              <span class = "glyphicon glyphicon-apple"></span>
-             Lunch
-          </div></li>
-          <li class="list-group-item">
-
-            <div>
-              <span class="glyphicon glyphicon-camera"></span>
-              Bhaktapur Durbar Square Visit
-              <button type="button" class="btn btn-outline-secondary">BOOK</button>
-            </div>
-
-          </li>
-          <li class="list-group-item"><div class="">
-              <span class = "glyphicon glyphicon-apple"></span>
-             Dinner
-          </div></li>
-        </ul>
+        <div class="credits">
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+          Designed by <a href="https://bootstrapmade.com/">404</a>
         </div>
-      </div>
-{% endfor %}
-
-
-
-
-
-
       </div>
     </div>
-  </section>
-
-
-
+  </div>
+</footer>
+  <!-- #footer -->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
