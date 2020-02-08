@@ -26,12 +26,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('profile/', user_views.profile, name='profile'),
     path('itin/', views.itin, name='itin'),
-    path('', include('pwa.urls')),
 
-    # <<<<<< HEAD
-    #     path('result/', views.result, name='result'),
-    # =======
-    #     path('profile/', views.form, name='form'),
-
-    # >>>>>>> 684cd8b0a641e028910bd158ff019ed727b8ce38
 ]
